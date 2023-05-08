@@ -1,0 +1,322 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Make the background animation cover the whole page */
+  .background-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    /* Insert your animation code here */
+  }
+  .name {
+  margin: 0;
+  font-size: 30px;
+  animation: slide-in 1s ease-out;
+  animation-fill-mode: forwards;
+}
+  /* Style the content area */
+  .content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 15px;
+    color: white;
+    text-align: center;
+  }
+  
+  /* Style the header and navigation */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  nav ul {
+    display: flex;
+    list-style-type: none;
+  }
+  
+  nav ul li {
+    margin-right: 20px;
+    display: inline-block;
+  margin: 0 2em;
+  position: relative; 
+  }
+  
+  nav ul li:last-child {
+    margin-right: 0;
+  }
+  
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    border: 1px solid white;
+    padding: 8px;
+  }
+  nav ul li a:hover {
+    color: white;
+  }
+  
+  nav ul li a::before {
+    content: "";
+    position: absolute;
+    bottom: -5px; /* Add some spacing between the text and the line */
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: blue;
+    transition: width 0.3s ease; /* Add transition for smooth animation */
+  }
+  
+  nav ul li a:hover::before {
+    width: 100%; /* Stretch the line to the width of the text */
+  }
+  
+  /* Style the "Talk to me" button */
+  .talk-to-me {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    animation: gradient-background 10s ease-in-out infinite;
+  }
+  
+  
+  @keyframes gradient-background {
+    0% {
+      background-image: linear-gradient(to right, #ffa07a, #f08080);
+    }
+    50% {
+      background-image: linear-gradient(to right, #f08080, #ff8c00);
+    }
+    100% {
+      background-image: linear-gradient(to right, #ff8c00, #ffa07a);
+    }
+  }
+  
+  /* Style the "View portfolio" button */
+  .view-portfolio {
+    display: inline-block;
+    color: black;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: 500px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    animation: gradient-background 10s ease-in-out infinite;
+  }
+
+  @keyframes gradient-background {
+    0% {
+      background-image: linear-gradient(to right, #ffa07a, #f08080);
+    }
+    50% {
+      background-image: linear-gradient(to right, #f08080, #ff8c00);
+    }
+    100% {
+      background-image: linear-gradient(to right, #ff8c00, #ffa07a);
+    }
+  }
+
+
+  /*style the backgroun*/
+  .bubbles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  
+  .bubble {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+      animation: bubble-up 10s cubic-bezier(.4, 0, .2, 1)linear infinite;
+  }
+  
+  /* You can adjust these values to make the bubbles bigger or smaller */
+  .small {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .medium {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .large {
+    width: 40px;
+    height: 40px;
+  }
+  
+  
+
+  /*adding color trails in the page*/
+  .cursor-trail {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+  }
+  
+  .cursor-trail span {
+    position: absolute;
+    display: block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    opacity: 0.6;
+    transition: all 0.5s ease-out;
+  }
+  
+  .cursor-trail span:nth-of-type(1) {
+    background-color: #ff6699;
+  }
+  
+  .cursor-trail span:nth-of-type(2) {
+    background-color: #ffcc66;
+  }
+  
+  .cursor-trail span:nth-of-type(3) {
+    background-color: #66ccff;
+  }
+  
+  .cursor-trail span:nth-of-type(4) {
+    background-color: #99ff66;
+  }
+  
+  .cursor-trail span:nth-of-type(5) {
+    background-color: #ff6666;
+  }
+  
+
+  /*name pop up*/
+  /* Style for name and welcome elements */
+.name {
+    position: fixed;
+    top: 40%;
+    left: -50%;
+    transform: translate(0, -50%);
+    z-index: 10;
+    font-size: 4em;
+    color: white;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: name-slide-in 2s ease forwards;
+    margin-top: -2em;
+  }
+  
+  .name-letters {
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+    opacity: 0;
+    animation: name-letters-appear 1s ease forwards 1.5s;
+  }
+  
+  .name-letters span {
+    font-size: 1em;
+    opacity: 0;
+    animation: name-letter-appear 1s ease forwards;
+    animation-delay: calc(0.1s * var(--index));
+  }
+  
+  .welcome {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    font-size: 1.5em;
+    color: white;
+    text-align: center;
+    animation: welcome-appear 1s ease forwards 3s;
+  }
+  
+  /* Keyframe animations */
+  @keyframes name-slide-in {
+    100% { left: 50%; }
+  }
+  
+  @keyframes name-letters-appear {
+    100% { opacity: 1; }
+  }
+  
+  @keyframes name-letter-appear {
+    100% { opacity: 1; }
+  }
+  
+  @keyframes welcome-appear {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+
+  /* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50px;
+  height: 200px;
+  background-color: #f8f8f8;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.sidebar a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  margin: 10px;
+  font-size: 24px;
+  color: #555;
+  transition: all 0.3s ease-in-out;
+}
+
+.sidebar a:hover {
+  color: #fff;
+  background-color: #555;
+  border-radius: 50%;
+}
+
+/* Font Awesome icons */
+.fa {
+  font-size: inherit;
+}
+.fa-envelope:before {
+  content: "\f0e0";
+}
+.fa-github:before {
+  content: "\f09b";
+}
+.fa-linkedin:before {
+  content: "\f08c";
+}

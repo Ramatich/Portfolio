@@ -1,0 +1,97 @@
+/* Side Navigation */
+nav {
+    position: fixed;
+    height: 100%;
+    width: 220px;
+    top: 0;
+    left: 0;
+    background-color: #333;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+  
+
+  
+  nav li {
+    margin: 10px 0;
+    padding: 0;
+    font-size: 15px;
+  }
+  
+  nav a {
+    display: block;
+    color: #f2f2f2;
+    padding: 18px 34px;
+    text-decoration: none;
+  }
+  
+  nav a:hover {
+    color:black;
+
+  }
+  
+
+
+
+  
+  /* Show Sections on Scroll */
+  .section {
+    opacity: 0;
+    transition: opacity 4s ease-in-out;
+  }
+  
+  .section.visible {
+    opacity: 1;
+  }
+
+  /* Style the categories and their headers */
+.category {
+  margin: 50px 0;
+  padding: 20px;
+  border: 1px solid #ddd;
+  background-color: #f7f7f7;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.category h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Style the projects list */
+.projects {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.projects li a {
+  display: block;
+  padding: 10px;
+  font-size: 16px;
+  color: #333;
+  text-decoration: none;
+  margin-top:30px;
+  transition: font-size 0.2s, background-color 0.2s;
+}
+
+.projects li a:hover {
+  font-size: 30px;
+  background-color: #f5f5f5;
+}
+
+/* Style the active link in the nav */
+nav a.active {
+  border-bottom: 2px solid blue;
+}
+.p-header{
+  background-color: black;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+
+.fa-lg ,.fas{
+  font-size: 1.5em;
+}
+  
